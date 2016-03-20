@@ -1,34 +1,17 @@
-//
-// Created by ozyx on 3/4/16.
-//
-
 #include "Room.h"
 
-Room::Room()
+
+
+Room::Room(std::string name, std::string desc, std::string north, std::string east, std::string south, std::string west)
 {
-  description = "You see a room full of defaults.";
-  north = "none";
-  south = "none";
-  east  = "none";
-  west  = "none";
+	roomName = name;
+	roomDesc = desc;
+	northRoom = north;
+	eastRoom = east;
+	southRoom = south;
+	westRoom = west;
 }
 
-Room::Room(std::string desc, std::string N, std::string S, std::string E,
-           std::string W)
-{
-  description = desc;
-  north = N;
-  south = S;
-  east  = E;
-  west  = W;
-}
+Room::Room() {}
 
-Room::~Room()
-{
-
-}
-
-std::string Room::GetDesc() const
-{
-  return description;
-}
+Room::~Room() {}
