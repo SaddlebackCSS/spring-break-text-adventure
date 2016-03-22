@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <vector>
+#include <map>
 #include "Room.h"
 
 class Mansion

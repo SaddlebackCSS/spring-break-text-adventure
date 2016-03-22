@@ -2,8 +2,6 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
-
 GameWorld::GameWorld(Room* initialRoom)
 {
 	currentRoom = initialRoom;
@@ -11,9 +9,9 @@ GameWorld::GameWorld(Room* initialRoom)
 
 GameWorld::~GameWorld(){}
 
-void GameWorld::addARoom(string name, Room& room)
+void GameWorld::addARoom(std::string key, Room& room)
 {
-	roomMap[name] = room;
+	roomMap[key] = room;
 }
 
 void GameWorld::moveToRoom(std::string roomName)
@@ -24,11 +22,11 @@ void GameWorld::moveToRoom(std::string roomName)
 	}
 	else
 	{
-		cout << "There is nowhere to go in that direction." << endl;
+		std::cout << "There is nowhere to go in that direction." << std::endl;
 	}
 }
 
-bool GameWorld::isValidCommand(string input)
+bool GameWorld::isValidCommand(std::string input)
 {
 	bool isValid = false;
 
@@ -65,17 +63,18 @@ bool GameWorld::isValidCommand(string input)
 	return isValid;
 }
 
-bool GameWorld::InteractWithRoom()
+bool GameWorld::interact()
 {
 	std::string input;
 	bool isStillPlaying = true;
 
+	std::cout << currentRoom->GetRoomDesc() << std::endl;
 	do
 	{
-		cout << currentRoom->roomDesc;
+		std::cout << "Enter a command: ";
 
 		getline(std::cin, input);
-		transform(input.begin(), input.end(), input.begin(), ::tolower);
+		std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 
 		if (!isValidCommand(input))
 		{
@@ -86,22 +85,22 @@ bool GameWorld::InteractWithRoom()
 
 	if (input == "north")
 	{
-		moveToRoom(currentRoom->northRoom);
+		moveToRoom(currentRoom->GetNorth());
 	}
 
 	if (input == "east")
 	{
-		moveToRoom(currentRoom->eastRoom);
+		moveToRoom(currentRoom->GetEast());
 	}
 
 	if (input == "south")
 	{
-		moveToRoom(currentRoom->southRoom);
+		moveToRoom(currentRoom->GetSouth());
 	}
 
 	if (input == "west")
 	{
-		moveToRoom(currentRoom->westRoom);
+		moveToRoom(currentRoom->GetWest());
 	}
 
 	if (input == "quit")
