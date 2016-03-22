@@ -26,7 +26,7 @@ int main()
 	do
 	{
 
-		isPlaying = world.InteractWithRoom();
+		isPlaying = world.interact();
 
 	} while (isPlaying);
 
