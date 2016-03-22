@@ -14,8 +14,8 @@ int main()
 	Room room2(ROOM_2_NAME, "The second room in the house ", "none", "none", ROOM_1_NAME, "none");
 
 	GameWorld world(&room1);
-	world.addARoom(ROOM_1_NAME, room1);
-	world.addARoom(ROOM_2_NAME, room2);
+	world.addRoom(ROOM_1_NAME, room1);
+	world.addRoom(ROOM_2_NAME, room2);
 
 	bool isPlaying;
 

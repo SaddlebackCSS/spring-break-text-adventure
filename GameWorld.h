@@ -7,17 +7,22 @@
 class GameWorld
 {
 public:
-	GameWorld(Room* initialRoom);
-	~GameWorld();
+    GameWorld(Room *initialRoom);
 
-	void addARoom(std::string key, Room& room);
-	void moveToRoom(std::string roomName);
-	bool isValidCommand(std::string input);
-	bool interact();
+    ~GameWorld();
+
+    void addRoom(std::string key, Room &room);
+
+    void moveToRoom(std::string roomName);
+
+    bool isValidCommand(std::string input);
+
+    bool interact();
 
 private:
-		std::map<std::string, Room> roomMap;
-		std::vector<std::string> validCommands;
-		Room* currentRoom;
+
+    std::map<std::string, Room> roomMap;
+    std::vector<std::string> validCommands;
+    Room *currentRoom;
 };
 
