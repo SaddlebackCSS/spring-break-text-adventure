@@ -1,6 +1,14 @@
 #include "Room.h"
 
-Room::Room() {}
+Room::Room()
+{
+	roomName = "default";
+	roomDesc = "You're in the first room. Wow.";
+	northRoom = "none";
+	eastRoom  = "none";
+	westRoom  = "start";
+	eastRoom  = "none";
+}
 
 Room::Room(std::string name, std::string desc, std::string north,
 					 std::string east, std::string south, std::string west)

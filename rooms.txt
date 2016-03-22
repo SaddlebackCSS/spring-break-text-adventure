@@ -1,6 +1,13 @@
 start
 You see a default room. It's crazy.
+next
 none
 none
+none
+
+next
+This is the next room. You find yourself here and you don't know why.
+none
+start
 none
 none
